@@ -1,6 +1,7 @@
 import { useState, useEffect} from "react";
 import { useNavigate } from "react-router-dom";
 const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+console.log("API URL:", API_URL);
 // Use the local address as a fallback if the environment variable isn't set.
 
 const Home = ({isLoading, isLoggedIn}) => {
