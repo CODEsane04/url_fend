@@ -23,6 +23,7 @@ const Login = ({ isLoggedIn, setIsLoggedIn }) => {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({email: email, password: Password}),
+            credentials: 'include',
         });
 
         if (res.ok) {
