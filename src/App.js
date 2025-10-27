@@ -7,6 +7,8 @@ import Home from './home.js';
 import Links from './url-list.js';
 import Signup from './signuppage.js';
 import Login from './loginpage.js'
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+// Use the local address as a fallback if the environment variable isn't set.
 
 function App() {
 
@@ -16,7 +18,7 @@ function App() {
 
       const checkAuth = async () => {
 
-        const res = await fetch('/user/check-auth', {
+        const res = await fetch(`${API_BASE_URL}/user/check-auth`, {
           method: 'GET',
           credentials: 'include',
         });

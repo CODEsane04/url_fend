@@ -1,5 +1,7 @@
 import { useState} from "react";
 import { useNavigate } from "react-router-dom";
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+// Use the local address as a fallback if the environment variable isn't set.
 
 const Login = ({ isLoggedIn, setIsLoggedIn }) => {
 
@@ -14,7 +16,7 @@ const Login = ({ isLoggedIn, setIsLoggedIn }) => {
     
     
     const handleLogin = async ()=> {
-        const res = await fetch('/user/login', {
+        const res = await fetch(`${API_BASE_URL}/user/login`, {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json",
